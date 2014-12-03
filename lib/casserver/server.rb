@@ -304,7 +304,7 @@ module CASServer
 
       # optional params
       @service = clean_service_url(params['service'])
-      @from = params['from']
+      @from = clean_service_url(params['from'])
       @return_url = if @from.blank?
                       @service
                     else
@@ -402,7 +402,7 @@ module CASServer
 
       # 2.2.1 (optional)
       @service = clean_service_url(params['service'])
-      @from = params['from']
+      @from = clean_service_url(params['from'])
       @return_url = if @from.blank?
                       @service
                     else
